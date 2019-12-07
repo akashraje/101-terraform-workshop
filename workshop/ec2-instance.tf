@@ -1,18 +1,7 @@
-variable "sshkeypath" {
-  default = ""
-}
-
-resource "aws_key_pair" "ssh_key" {
-  key_name = ""
-  public_key = file(var.sshkeypath)
-}
-
 resource "aws_instance" "first_instance" {
-  ami = ""
+  ami = "ami-04b9e92b5572fa0d1"
 
-  subnet_id = ""
-
-  key_name = aws_key_pair.ssh_key.key_name
+  subnet_id = "subnet-16979c3"
 
   instance_type = "t2.micro"
 
